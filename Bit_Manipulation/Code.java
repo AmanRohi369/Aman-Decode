@@ -32,6 +32,32 @@ public class Main
         int mask=m<<i;
         return n|mask;
     }
+    public static int countBits(int n){
+        int cnt=0;
+        while(n>0){
+            cnt+=(n&1);
+            n=n>>1;
+        }
+        return cnt;
+    }
+    public static int countBit_Hack(int n){
+        int cnt=0;
+        while(n>0){
+            n=n&(n-1);
+            cnt++;
+        }
+        return cnt;
+    }
+    public static long convertToBinary(int n){
+        long power=1;
+        long res=0;
+        while(n>0){
+            res+=power*(n&1);
+            n=n>>1;
+            power*=10;
+        }
+        return res;
+    }
     
 	public static void main(String[] args) {
 	    int n=11;
